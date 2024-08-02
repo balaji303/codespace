@@ -5,6 +5,7 @@ List of Codespaces
 - [C Exercise](https://github.com/balaji303/C-Exercise/tree/CodeSpace)
 - [ESH](https://github.com/balaji303/esh)
 
+*Even if we dont give any docker file, default image is used to create the github codespace*
 
 File and Directory Operations
 Linux Command	Windows Command
