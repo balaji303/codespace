@@ -2,7 +2,13 @@
     // The name of the development container
     "name": "Balaji Dev Container",
     // Extensions to be installed in the container
-    "extensions": "esbenp.prettier-vscode",
+    "extensions":
+    [ 
+        // Prettier extension
+        "esbenp.prettier-vscode",
+        // Markdown lint extension
+        "DavidAnson.vscode-markdownlint"  
+    ],
     // Command to run after the container is created
     "postCreateCommand": "pip install -r requirements.txt",
     // Command to run each time the container starts

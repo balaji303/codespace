@@ -7,6 +7,22 @@ List of Codespaces
 
 *Even if we dont give any docker file, default image is used to create the github codespace*
 
+## Complete Project Structure
+
+'''
+
+/my-project
+|-- .devcontainer
+|   |-- Dockerfile
+|   |-- devcontainer.json
+|-- .prettierrc
+|-- .markdownlint.json
+|-- .vscode
+|   |-- settings.json
+|-- (your project files)
+
+'''
+
 File and Directory Operations
 Linux Command	Windows Command
 ls	dir
