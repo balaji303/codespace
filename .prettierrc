@@ -1,3 +1,4 @@
+// Use Shift + Alt + F to run prettier
 {
   "semi": true,
   "singleQuote": true,

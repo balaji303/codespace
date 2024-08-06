@@ -1,11 +1,11 @@
+// Ctrl + Shift + P -> Then select MarkdownLint entire workspace
 {
-    "default": true,
-    // Disable line length rule
-    "MD013": false,
-    // Allow inline HTML
-    "MD033": false,
-    "MD041": {
-      "level": "warning"
-    }
-  }
-  
+  "default": true,
+  // Disable line length rule
+  "MD013": false,
+  // Allow inline HTML
+  // "MD033": {
+  //   "level": "warning"
+  // },
+  "MD041": false
+}
