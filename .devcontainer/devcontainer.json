@@ -6,6 +6,12 @@
     {
         "vscode":
         {
+
+            "workbench.iconTheme": "vs-seti",
+            "editor.minimap.enabled": true,
+            "git.autorefresh": true,
+            "terminal.integrated.cursorBlinking": true,
+            "terminal.integrated.cursorStyle": "line",
             // Extensions to be installed in the container
             "extensions":
             [ 
