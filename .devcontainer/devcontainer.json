@@ -2,6 +2,10 @@
     // The name of the development container
     "name": "Balaji Dev Container",
 
+    "build": 
+    { 
+        "dockerfile": "BalajiDockerfile"
+    },    
     "customizations": 
     {
         "vscode":
