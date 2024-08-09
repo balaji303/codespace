@@ -1,4 +1,9 @@
 {
+    "workbench.iconTheme": "bearded-icons",
+    "editor.minimap.enabled": true,
+    "git.autorefresh": true,
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
     "editor.fontSize": 22,
     "terminal.integrated.fontSize": 22,
     "editor.formatOnSave": true, // Automatically format files on save
