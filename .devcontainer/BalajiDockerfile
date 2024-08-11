@@ -1,0 +1,22 @@
+#
+
+# Image from https://hub.docker.com/r/microsoft/vscode-devcontainers
+FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu
+
+# PLEASE CHANGE THESE TO SUIT YOUR CONFIG
+ARG USER_NAME="balaji303"
+ARG USER_PASSWORD="123456789"
+ARG GIT_NAME="Balaji"
+ARG GIT_EMAIL="balajimail@zoho.com"
+
+ENV USER_NAME $USER_NAME
+ENV USER_PASSWORD $USER_PASSWORD
+ENV CONTAINER_IMAGE_VER=v1.0.0
+ENV DEBIAN_FRONTEND=interactive
+
+#RUN adduser --quiet --disabled-password --shell /bin/zsh --home /home/$USER_NAME --gecos "User" $USER_NAME
+RUN set -x && \
+    adduser --shell /bin/zsh --home /home/$USER_NAME --gecos "User" $USER_NAME && \
+    echo "${USER_NAME}:${USER_PASSWORD}" | chpasswd && \
+    usermod -aG sudo $USER_NAME && \
+    adduser $USER_NAME sudo
