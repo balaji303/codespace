@@ -51,5 +51,11 @@ RUN sudo apt-get install --no-install-recommends -y \
 
 RUN yes | unminimize
 
+# user specific configuration
+USER $USER_NAME
+
 # terminal colors with xterm
 ENV TERM xterm
+
+RUN git config --global user.email "$GIT_EMAIL"
+RUN git config --global user.name "$GIT_NAME"
