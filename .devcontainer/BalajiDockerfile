@@ -1,66 +1,61 @@
-# Use the base image for Visual Studio Code dev containers with Ubuntu
+#
+
+# Image from https://hub.docker.com/r/microsoft/vscode-devcontainers
 FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu
 
-# Define build arguments for user details and Git configuration
+# PLEASE CHANGE THESE TO SUIT YOUR CONFIG
 ARG USER_NAME="balaji303"
 ARG USER_PASSWORD="123456789"
 ARG GIT_NAME="Balaji"
 ARG GIT_EMAIL="balajimail@zoho.com"
 
-# Set environment variables for user details and container image version
 ENV USER_NAME $USER_NAME
 ENV USER_PASSWORD $USER_PASSWORD
 ENV CONTAINER_IMAGE_VER=v1.0.0
 ENV DEBIAN_FRONTEND=interactive
 
-# Create a new user with the specified username, assign a shell, and set up a home directory
-# Set the user’s password and add the user to the sudo group
-RUN set -x && \ 
+#RUN adduser --quiet --disabled-password --shell /bin/zsh --home /home/$USER_NAME --gecos "User" $USER_NAME
+RUN set -x && \
     adduser --shell /bin/zsh --home /home/$USER_NAME --gecos "User" $USER_NAME && \
     echo "${USER_NAME}:${USER_PASSWORD}" | chpasswd && \
     usermod -aG sudo $USER_NAME && \
     adduser $USER_NAME sudo
 
-# Update the package list to get the latest information on available packages
 RUN sudo apt-get update
-
-# Install essential packages and tools required for development
 RUN sudo apt-get install --no-install-recommends -y \
-  ca-certificates \               # Common CA certificates
-  sudo \                          # Superuser do command
-  gdb-multiarch \                 # GNU Debugger with multi-architecture support
-  gcc-riscv64-unknown-elf \       # GCC for RISC-V (64-bit)
-  binutils-common \               # Common binary utilities
-  make \                          # Utility for directing compilation
-  curl \                          # Tool for transferring data with URLs
-  git-core \                      # Git version control system
-  wget \                          # Tool for downloading files from the web
-  nano \                          # Simple text editor
-  ssh \                           # Secure Shell client
-  tree \                          # Displays directory structure in a tree format
-  less \                          # Terminal pager for viewing files
-  build-essential \               # Essential tools for building software (compiler, linker, etc.)
-  python3 \                       # Python 3 interpreter
-  python3-dev \                   # Header files and a static library for Python 3
-  python3-pip \                   # Package installer for Python 3
-  binutils \                      # Collection of binary tools
-  make \                          # Utility for compiling and building software
-  binutils-riscv64-linux-gnu \    # Binary utilities for RISC-V (64-bit) Linux
-  qemu-system-riscv32 \           # QEMU emulator for RISC-V 32-bit
-  zsh \                           # Z shell
-  xxd \                           # Hex dump utility
-  strace \                        # Tool for tracing system calls
-  man                             # Manual pages viewer
+  ca-certificates \
+  sudo \
+  gdb-multiarch \
+  gcc-riscv64-unknown-elf \
+  binutils-common \
+  make \
+  curl \
+  git-core \
+  wget \
+  nano \
+  ssh \
+  tree \
+  less \
+  build-essential \
+  python3 \
+  python3-dev \
+  python3-pip \
+  binutils \
+  make \
+  binutils-riscv64-linux-gnu \
+  qemu-system-riscv32 \
+  zsh \
+  xxd \
+  strace \
+  man
 
-# Install localization and man pages that are typically removed in minimal installs
 RUN yes | unminimize
 
-# Switch to the newly created user for the following commands
+# user specific configuration
 USER $USER_NAME
 
-# Set terminal type to xterm for color support
+# terminal colors with xterm
 ENV TERM xterm
 
-# Configure Git with the user’s email and name globally
 RUN git config --global user.email "$GIT_EMAIL"
 RUN git config --global user.name "$GIT_NAME"
