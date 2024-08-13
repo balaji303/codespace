@@ -1,17 +1,37 @@
 {
-    "workbench.iconTheme": "bearded-icons",
-    "editor.minimap.enabled": true,
-    "git.autorefresh": true,
-    "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.cursorStyle": "line",
-    "editor.fontSize": 22,
-    "terminal.integrated.fontSize": 22,
-    "editor.formatOnSave": true, // Automatically format files on save
-    "editor.defaultFormatter": "esbenp.prettier-vscode", // Set Prettier as the default formatter
-    "[markdown]": 
-    {
-      "editor.defaultFormatter": "esbenp.prettier-vscode", // Use Prettier for Markdown files
-      "editor.formatOnSave": true // Automatically format Markdown files on save
-    }
+  // Sets the icon theme for the VS Code workbench
+  "workbench.iconTheme": "bearded-icons",
+
+  // Enables the minimap in the editor, which shows a high-level overview of the code
+  "editor.minimap.enabled": true,
+
+  // Automatically refreshes the Git view to show the latest changes
+  "git.autorefresh": true,
+
+  // Enables cursor blinking in the integrated terminal
+  "terminal.integrated.cursorBlinking": true,
+
+  // Sets the cursor style in the integrated terminal to a line
+  "terminal.integrated.cursorStyle": "line",
+
+  // Sets the font size for the code editor
+  "editor.fontSize": 22,
+
+  // Sets the font size for the integrated terminal
+  "terminal.integrated.fontSize": 22,
+
+  // Automatically formats the code when a file is saved
+  "editor.formatOnSave": true, 
+
+  // Sets Prettier as the default formatter for all files
+  "editor.defaultFormatter": "esbenp.prettier-vscode", 
+
+  "[markdown]": 
+  {
+      // Uses Prettier as the default formatter for Markdown files
+      "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+      // Automatically formats Markdown files when they are saved
+      "editor.formatOnSave": true 
+  }
 }
-  

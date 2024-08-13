@@ -2,33 +2,37 @@
     // The name of the development container
     "name": "Balaji Dev Container",
 
+    // Specifies the build options for the Docker container
     "build": 
     { 
+        // The name of the Dockerfile used to build the container image
         "dockerfile": "BalajiDockerfile"
     },    
+
+    // Customizations specific to Visual Studio Code
     "customizations": 
     {
         "vscode":
         {
-
-
             // Extensions to be installed in the container
             "extensions":
             [
-                "esbenp.prettier-vscode",
-                "DavidAnson.vscode-markdownlint",
-                "BeardedBear.beardedicons",
-                "tonybaloney.vscode-pets",
-                "donjayamanne.githistory",
-                "ms-azuretools.vscode-docker"
+                "esbenp.prettier-vscode",           // Code formatter for consistent code style
+                "DavidAnson.vscode-markdownlint",   // Linter for markdown files
+                "BeardedBear.beardedicons",         // Icon theme for the file explorer
+                "tonybaloney.vscode-pets",          // Fun extension that adds pets to your editor
+                "donjayamanne.githistory",          // Extension to view git history in a graphical way
+                "ms-azuretools.vscode-docker"       // Docker support for managing containers, images, and registries
             ]
         }
     },
+
     // Command to run after the container is created
     "postCreateCommand": "pip install -r requirements.txt",
+
     // Command to run each time the container starts
     "postStartCommand": "echo 'Welcome to the development container of Balaji!'",
+
     // Command to run each time a new terminal is created
     "postAttachCommand": "echo 'New terminal session started!'"
 }
-  
