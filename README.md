@@ -1,13 +1,12 @@
 # codespace
 List of Codespaces
 
-- [c ninja listings](https://github.com/balaji303/c-ninja-listings)
-- [C Exercise](https://github.com/balaji303/C-Exercise/tree/CodeSpace)
-- [ESH](https://github.com/balaji303/esh)
-
-
+- [Ubuntu-SandBox](https://redesigned-potato-p75x4xr5vgx2r464.github.dev/)
+- [LinkerScript](https://expert-eureka-jrpxvx5pvp7hj745.github.dev/)
+  
 File and Directory Operations
 Linux Command	Windows Command
+```
 ls	dir
 cp	copy
 mv	move
@@ -43,3 +42,4 @@ Linux Command	Windows Command
 sudo	Run Command Prompt or PowerShell as Administrator
 clear	cls
 echo	echo
+```
